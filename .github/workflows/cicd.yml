@@ -32,5 +32,4 @@ jobs:
           git pull origin main  # If you're storing your `docker-compose.yml` in a repo
           sudo docker compose down  # Stop old containers
           sudo docker compose pull  # Pull latest images
-          sudo docker compose up -d --remove-orphans  # Start new containers
-          sudo docker system prune -f  # Cleanup unused images
+          sudo docker compose up -d # Start new containers
