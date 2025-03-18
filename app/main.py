@@ -9,9 +9,9 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.get("/second")
+@app.get("/yanna")
 def read_second():
-    return {"Second": "Second"}
+    return {"Yanna": "Strong love to this woman!"}
 
 
 @app.get("/nano")
