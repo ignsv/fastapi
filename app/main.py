@@ -14,9 +14,5 @@ def read_second():
     return {"Yanna": "Strong love to this woman!"}
 
 
-@app.get("/nano")
-def read_nano():
-    return {"Nano": "Nano"}
-
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
