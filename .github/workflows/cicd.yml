@@ -28,6 +28,7 @@ jobs:
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
+          cd ~/fastapi
           sudo docker compose down  # Stop old containers
           sudo docker compose -f docker-compose_prod.yaml up -d --remove-orphans
           sudo docker system prune -f  # Cleanup unused images
