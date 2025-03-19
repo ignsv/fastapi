@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Log in to GitHub Container Registry (GHCR)
-      run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ secrets.GHCR_USERNAME }} --password-stdin
+      run: echo "${{ secrets.GHCR_TOKEN }}" | sudo docker login ghcr.io -u ${{ secrets.GHCR_USERNAME }} --password-stdin
 
     - name: Build and Push Docker Image
       run: |
@@ -28,8 +28,6 @@ jobs:
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          sudo cd ~/fastapi  # Make sure this is your deployment directory
-          git pull origin main  # If you're storing your `docker-compose.yml` in a repo
           sudo docker compose down  # Stop old containers
-          sudo docker compose pull  # Pull latest images
-          sudo docker compose up -d # Start new containers
+          sudo docker compose -f docker-compose_prod.yaml up -d --remove-orphans
+          sudo docker system prune -f  # Cleanup unused images
