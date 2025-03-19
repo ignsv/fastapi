@@ -11,7 +11,7 @@ def read_root():
 
 @app.get("/yanna")
 def read_second():
-    return {"WOW": "MY Hello!"}
+    return {"HI": "ferererfer!"}
 
 
 @app.get("/checker")
