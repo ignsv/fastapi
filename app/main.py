@@ -15,7 +15,7 @@ def read_second():
 
 
 @app.get("/checker")
-def read_second():
+def read_checker():
     return {"chcker": "checker"}
 
 
