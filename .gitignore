@@ -179,3 +179,4 @@ node_modules/
 # other
 centr_osvita/staticfiles/
 package-lock.json
+docker-compose_prod.yaml
