@@ -11,7 +11,7 @@ def read_root():
 
 @app.get("/yanna")
 def read_second():
-    return {"Yanna": "Strong love to this woman!"}
+    return {"Yanna": "MY LOVE!"}
 
 
 if __name__ == "__main__":
